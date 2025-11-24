@@ -13,11 +13,12 @@ public class TerrainGenerartion : MonoBehaviour
 {
 
     [SerializeField] private Mesh mesh = null;
-    [SerializeField] private List<Biomes> biomesList = new List<Biomes>();
+    [SerializeField] private List<GameObject> landscapeList = new List<GameObject>();
 
     [SerializeField] private int seed = 3;
     [SerializeField] private float scale = 3f;
     [SerializeField] private float maxHeight = 3f;
+    [SerializeField] private float landscapeQuantity = 10;
 
     Vector3[] vertices = null;
     private List<Dictionary<BIOME, Color>> biomeList = new List<Dictionary<BIOME, Color>>();
@@ -28,6 +29,8 @@ public class TerrainGenerartion : MonoBehaviour
         mesh = gameObject.GetComponent<MeshFilter>().mesh;
         vertices = mesh.vertices;
 
+        Debug.Log(transform.lossyScale);
+
         GenerateTerrain();
     }
 
@@ -36,7 +39,7 @@ public class TerrainGenerartion : MonoBehaviour
         Random.InitState(seed);
         Color[] colors = new Color[vertices.Length];    
 
-        Vector2 halfedMeshSize = new Vector2(mesh.bounds.size.x, mesh.bounds.size.z) / 2;
+        Vector2 halfedMeshSize = new Vector2(transform.lossyScale.x,transform.lossyScale.z) / 2;
         for (int i = 0; i < vertices.Length; i++)
         {
             float heightMultiplicator =
@@ -53,48 +56,20 @@ public class TerrainGenerartion : MonoBehaviour
             verticeWorldPositon.y += height;
             vertices[i].y = heightMultiplicator * maxHeight;
 
-            //BIOME biome = GenerateBiomes(heightMultiplicator);
+        }
 
-            //for (int b = 0; b < biomesList.Count; b++)
-            //{
-            //    if (biome == biomesList[b].biomeType)
-            //    {
-            //        colors[i] = biomesList[b].biomeColor;
-            //        break;
-            //    }
-            //}
+        for (int i = 0; i < landscapeQuantity; i++)
+        {
+            int landscapeIndex = Random.Range(0, landscapeList.Count);
+
+            //Vector3 landscapeRandomPosition = Random.Range()
+            //Instantiate(landscapeList[landscapeIndex], transform.localPosition)
+
 
         }
         mesh.vertices = vertices;
-        mesh.colors = colors;
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
-    }
-
-    private BIOME GenerateBiomes(float heightMultiplicator)
-    {
-        for (int i = 0; i < biomesList.Count; i++)
-        {
-            if (heightMultiplicator < 0.1) return BIOME.OCEAN;
-            if (heightMultiplicator < 0.12) return BIOME.BEACH;
-        }
-
-        if (heightMultiplicator > 0.8)
-        {
-            return BIOME.SNOW;
-        }
-
-        if (heightMultiplicator > 0.6)
-        {
-            return BIOME.TAIGA;
-        }
-
-        if (heightMultiplicator > 0.3)
-        {
-            return BIOME.GRASSLAND;
-        }
-
-        return BIOME.OCEAN;
     }
 
 }
