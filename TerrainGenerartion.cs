@@ -56,20 +56,23 @@ public class TerrainGenerartion : MonoBehaviour
             verticeWorldPositon.y += height;
             vertices[i].y = heightMultiplicator * maxHeight;
 
-        }
-
-        for (int i = 0; i < landscapeQuantity; i++)
-        {
-            int landscapeIndex = Random.Range(0, landscapeList.Count);
-
-            //Vector3 landscapeRandomPosition = Random.Range()
-            //Instantiate(landscapeList[landscapeIndex], transform.localPosition)
-
+            Debug.Log(verticeWorldPositon);
 
         }
+
         mesh.vertices = vertices;
         mesh.RecalculateNormals();
         mesh.RecalculateBounds();
+
+        for (int j = 0; j < landscapeQuantity; j++)
+        {
+            int landscapeIndex = Random.Range(0, landscapeList.Count);
+            int randomVerticeRange = Random.Range(0, vertices.Length);
+
+            Vector3 landscapeRandomPosition = transform.TransformPoint(vertices[randomVerticeRange]) ;
+
+            Instantiate(landscapeList[landscapeIndex], landscapeRandomPosition, Quaternion.identity);
+        }
     }
 
 }
