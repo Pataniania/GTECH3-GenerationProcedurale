@@ -70,88 +70,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 682ecd4f577e127409cd077a8f3f19ef, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 682ecd4f577e127409cd077a8f3f19ef, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5243705306261949373}
-    m_AddedComponents: []
+      addedObject: {fileID: -1677182113680024371}
   m_SourcePrefab: {fileID: 100100000, guid: 682ecd4f577e127409cd077a8f3f19ef, type: 3}
---- !u!4 &1387354816585199976 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 682ecd4f577e127409cd077a8f3f19ef, type: 3}
+--- !u!1 &1732495483035495378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 682ecd4f577e127409cd077a8f3f19ef, type: 3}
   m_PrefabInstance: {fileID: 1498122696003786371}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5243705306262081853
-PrefabInstance:
+--- !u!114 &-1677182113680024371
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1387354816585199976}
-    m_Modifications:
-    - target: {fileID: 100000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_Name
-      value: Building Sky_big_color01
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.256
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.211
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -1.3382753e-24
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 6.123234e-17
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.000000021855694
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
---- !u!4 &5243705306261949373 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
-  m_PrefabInstance: {fileID: 5243705306262081853}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732495483035495378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 470f3e5c7c1ed9e42a89ad02b4ddfb54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingScale: {x: 1, y: 1, z: 1}
+  buildingTypes:
+  - prefab: {fileID: 100000, guid: 22106dc63dce41746ad234a91af2d657, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: 694e1313d3f12e84aaf959ff6960ddaf, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: 6a690a756dbd65141a09a3ad7fafacc4, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
+    weight: 5
+  - prefab: {fileID: 100000, guid: 121f662ea65e2cf40a50c66470757a9e, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 65abb0f1b521f834bae80ea4c9d93734, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 4c14ffc6a7f79e942885227ac141590c, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: e1d9101af5d96d94ca99efe2de0bac21, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 5dd9f8de2583df543859013bcdc56639, type: 3}
+    weight: 2
+  - prefab: {fileID: 100000, guid: 00b78b03851cb0748b61d9005fb73b49, type: 3}
+    weight: 1
+  - prefab: {fileID: 100000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
+    weight: 1
+  - prefab: {fileID: 100000, guid: 1682119d19a954f4a8020f36112606ed, type: 3}
+    weight: 2
+  offsetTopLeft: {x: -0.25, y: 0, z: 0.25}
+  offsetTopRight: {x: 0.25, y: 0, z: 0.25}
+  offsetBottomLeft: {x: -0.25, y: 0, z: -0.25}
+  offsetBottomRight: {x: 0.25, y: 0, z: -0.25}
