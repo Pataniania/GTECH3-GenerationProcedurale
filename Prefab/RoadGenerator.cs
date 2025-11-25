@@ -79,18 +79,14 @@ public class RoadGenerator : MonoBehaviour
             {
                 case 'F':
                     {
-                        // La route doit être centrée entre currentPos et newPos
                         Vector3 forward = direction.normalized;
 
-                        // 1) Position exacte du centre du segment
                         Vector3 centerPos = currentPos + forward * (stepLength * 0.5f);
                         centerPos.y = roadHeight;
 
-                        // 2) Intersection ?
                         bool isIntersection = lastDirection != direction;
                         GameObject prefabToUse = isIntersection ? roadIntersectionPrefab : roadStraightPrefab;
 
-                        // 3) Spawn EXACTEMENT AU CENTRE
                         Instantiate(
                             prefabToUse,
                             centerPos,
@@ -98,7 +94,6 @@ public class RoadGenerator : MonoBehaviour
                             transform
                         );
 
-                        // 4) Avancer pour le prochain segment
                         currentPos += forward * stepLength;
                         currentPos.y = roadHeight;
 
