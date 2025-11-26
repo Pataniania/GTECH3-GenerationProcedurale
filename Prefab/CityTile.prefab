@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1732495483035495378}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.08936, y: 0, z: 1.3391}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -151,12 +151,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095998a6e71a3ca4c9f69c8fdce49afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axiom: F
+  axiom: '[+S?][xS?][-S?][S?]'
   iterations: 1
-  stepLength: 0.15
+  stepLength: 0.16
   turnAngle: 90
-  rules: []
+  rules:
+  - symbol: S
+    replacement: IFF
+  - symbol: O
+    replacement: '[IFFI]'
+  - symbol: L
+    replacement: '[-IFFI]'
+  - symbol: R
+    replacement: '[+IFFI]'
+  minSubAxiomLength: 1
+  maxSubAxiomLength: 2
+  subAxiomCharacters: RLI
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
-  startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
+  startOffset: {x: 0, y: 0.01, z: 0}

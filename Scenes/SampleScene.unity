@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08936
+      value: 0.009360075
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.316
+      value: -1.021
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -219,7 +219,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &68414443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +332,7 @@ Transform:
   m_GameObject: {fileID: 68414441}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.08936, y: 0, z: -0.677}
+  m_LocalPosition: {x: 0.009360075, y: 0, z: -1.988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -379,7 +378,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &89029122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 89029120}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 2.097, y: 0, z: 1.3391}
+  m_LocalPosition: {x: 1.017, y: 0, z: -0.009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -509,15 +507,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.095
+      value: -0.9849999
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.352
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -599,7 +597,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &218466148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,7 +710,7 @@ Transform:
   m_GameObject: {fileID: 218466146}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 0.077, y: -0, z: 1.3391}
+  m_LocalPosition: {x: -1.0029999, y: 0, z: 0.011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -866,15 +863,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.906
+      value: -1.986
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3391
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1008,7 +1005,7 @@ Transform:
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -1.0799999, y: 3, z: -1.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1077,7 +1074,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &444675763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,7 +1187,7 @@ Transform:
   m_GameObject: {fileID: 444675761}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.08936, y: 0, z: 2.346}
+  m_LocalPosition: {x: 0.009360075, y: 0, z: 0.981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1237,7 +1233,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &565057373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,7 +1346,7 @@ Transform:
   m_GameObject: {fileID: 565057371}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 0.095, y: -0, z: 0.352}
+  m_LocalPosition: {x: -0.9849999, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1397,7 +1392,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &751641867
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1511,7 +1505,7 @@ Transform:
   m_GameObject: {fileID: 751641865}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 2.1, y: -0, z: 2.36}
+  m_LocalPosition: {x: 1.02, y: 0, z: 0.996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1606,7 +1600,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &932891826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1720,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 932891824}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 2.123, y: 0, z: 0.334}
+  m_LocalPosition: {x: 1.015, y: -0, z: -0.985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1766,7 +1759,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &1029629220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,7 +1872,7 @@ Transform:
   m_GameObject: {fileID: 1029629218}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.08936, y: 0, z: 3.367}
+  m_LocalPosition: {x: 0.009360075, y: 0, z: 1.942}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1896,7 +1888,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.097
+      value: 1.017
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1904,7 +1896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3391
+      value: -0.009
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1986,7 +1978,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &1225516325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2100,7 +2091,7 @@ Transform:
   m_GameObject: {fileID: 1225516323}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 3.12, y: 0, z: 1.3391}
+  m_LocalPosition: {x: 2.022, y: -0, z: 0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2146,7 +2137,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &1517907831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2260,7 +2250,7 @@ Transform:
   m_GameObject: {fileID: 1517907829}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: -0.906, y: -0, z: 1.3391}
+  m_LocalPosition: {x: -1.986, y: 0, z: 0.011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2276,7 +2266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08936
+      value: 0.009360075
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2284,7 +2274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.346
+      value: 0.981
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2336,7 +2326,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08936
+      value: 0.009360075
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2344,7 +2334,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.677
+      value: -1.988
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2396,15 +2386,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.36
+      value: 0.996
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2486,7 +2476,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &1813719327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2600,7 +2589,7 @@ Transform:
   m_GameObject: {fileID: 1813719325}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 0.109, y: -0, z: 2.333}
+  m_LocalPosition: {x: -0.97099996, y: 0, z: 1.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2616,7 +2605,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08936
+      value: 0.009360075
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2624,7 +2613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.367
+      value: 1.942
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2676,15 +2665,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.109
+      value: -0.97099996
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.333
+      value: 1.03
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2736,15 +2725,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.123
+      value: 1.015
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.334
+      value: -0.985
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2796,15 +2785,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.077
+      value: -1.0029999
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3391
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2856,7 +2845,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.08936
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2864,7 +2853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3391
+      value: -0.021
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2897,6 +2886,38 @@ PrefabInstance:
     - target: {fileID: 1732495483035495378, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
       propertyPath: m_Name
       value: CityTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: axiom
+      value: 'I[+FI][xFI][-FI[+FI]][FI]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: roadHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: stepLength
+      value: 0.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: startOffset.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: startOffset.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: rules.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: rules.Array.data[0].symbol
+      value: F
+      objectReference: {fileID: 0}
+    - target: {fileID: 4525020279424229420, guid: 639ade796a175dc4dbd3ff21df6996fd, type: 3}
+      propertyPath: rules.Array.data[0].replacement
+      value: FF
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2943,7 +2964,6 @@ MonoBehaviour:
   roadStraightPrefab: {fileID: 100000, guid: 4f32dfddb033d3e40b5841bc53cc1689, type: 3}
   roadIntersectionPrefab: {fileID: 100000, guid: 47ef019eb3bddab469e56e5a31eebf68, type: 3}
   startOffset: {x: 0, y: 0, z: 0}
-  roadHeight: 0.01
 --- !u!114 &2131901563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,7 +3077,7 @@ Transform:
   m_GameObject: {fileID: 2131901561}
   serializedVersion: 2
   m_LocalRotation: {x: -6.123234e-17, y: 1, z: 6.123234e-17, w: -3.7493994e-33}
-  m_LocalPosition: {x: 1.08936, y: 0, z: 0.316}
+  m_LocalPosition: {x: 0.009360075, y: 0, z: -1.021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -3073,15 +3093,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.12
+      value: 2.022
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.3391
+      value: 0.032
       objectReference: {fileID: 0}
     - target: {fileID: 1387354816585199976, guid: 1da7cb9b039ca6642a8cfe45a6d676a4, type: 3}
       propertyPath: m_LocalRotation.w

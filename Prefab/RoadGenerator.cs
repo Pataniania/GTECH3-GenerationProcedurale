@@ -11,21 +11,32 @@ public class RoadGenerator : MonoBehaviour
 
     public LRule[] rules;
 
+    [Header("Random Sub-Axiom Settings")]
+    public int minSubAxiomLength = 3;
+    public int maxSubAxiomLength = 10;
+    public string subAxiomCharacters = "FI+-[]x";
+
+
     [Header("Prefabs")]
     public GameObject roadStraightPrefab;
     public GameObject roadIntersectionPrefab;
 
     [Header("Tile Settings")]
     public Vector3 startOffset = Vector3.zero;
-    public float roadHeight = 0f; // hauteur Y personnalisée
 
     private string generatedString;
 
     void Start()
     {
+        string baseTemplate = axiom;
+        axiom = ExpandPlaceholders(baseTemplate);
+
+        Debug.Log("Generated Axiom: " + axiom);
+
         GenerateLSystem();
         GenerateRoad();
     }
+
 
     // ----------------------------------------------
     //   L-SYSTEM
@@ -60,13 +71,37 @@ public class RoadGenerator : MonoBehaviour
         }
     }
 
+    string ExpandPlaceholders(string template)
+    {
+        string result = "";
+
+        foreach (char c in template)
+        {
+            if (c == '?')
+            {
+                int length = Random.Range(minSubAxiomLength, maxSubAxiomLength + 1);
+                for (int i = 0; i < length; i++)
+                {
+                    int index = Random.Range(0, subAxiomCharacters.Length);
+                    result += subAxiomCharacters[index];
+                }
+            }
+            else
+            {
+                result += c;
+            }
+        }
+
+        return result;
+    }
+
+
     // ----------------------------------------------
     //   GÉNÉRATION DES ROUTES
     // ----------------------------------------------
     void GenerateRoad()
     {
         Vector3 currentPos = transform.position + startOffset;
-        currentPos.y = roadHeight;
 
         Vector3 direction = Vector3.forward;
         Vector3 lastDirection = direction;
@@ -81,22 +116,31 @@ public class RoadGenerator : MonoBehaviour
                     {
                         Vector3 forward = direction.normalized;
 
-                        Vector3 centerPos = currentPos + forward * (stepLength * 0.5f);
-                        centerPos.y = roadHeight;
-
-                        bool isIntersection = lastDirection != direction;
-                        GameObject prefabToUse = isIntersection ? roadIntersectionPrefab : roadStraightPrefab;
-
                         Instantiate(
-                            prefabToUse,
-                            centerPos,
+                            roadStraightPrefab,
+                            currentPos,
                             Quaternion.LookRotation(forward),
                             transform
                         );
 
                         currentPos += forward * stepLength;
-                        currentPos.y = roadHeight;
 
+                        lastDirection = direction;
+                    }
+                    break;
+
+                case 'I':
+                    {
+                        Vector3 forward = direction.normalized;
+
+                        Instantiate(
+                            roadIntersectionPrefab,
+                            currentPos,
+                            Quaternion.LookRotation(forward),
+                            transform
+                        );
+
+                        currentPos += forward * stepLength;
                         lastDirection = direction;
                     }
                     break;
@@ -110,20 +154,23 @@ public class RoadGenerator : MonoBehaviour
                     direction = Quaternion.Euler(0, -turnAngle, 0) * direction;
                     break;
 
+                case 'x':
+                    direction = Quaternion.Euler(0, turnAngle*2, 0) * direction;
+                    break;
+
                 case '[':
                     stateStack.Push((currentPos, direction));
                     break;
 
                 case ']':
                     (currentPos, direction) = stateStack.Pop();
-                    currentPos.y = roadHeight;
                     break;
             }
         }
     }
 }
 
-[System.Serializable]
+    [System.Serializable]
 public class LRule
 {
     public string symbol;
