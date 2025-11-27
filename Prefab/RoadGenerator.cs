@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 public class RoadGenerator : MonoBehaviour
 {
+    [Header("Seed Settings")]
+    public int seed = 0;                 // Seed locale (calculée automatiquement)
+    private System.Random prng;          // Random indépendant et stable
+
     [Header("L-System Settings")]
     public string axiom = "F";
     public int iterations = 3;
@@ -16,7 +20,6 @@ public class RoadGenerator : MonoBehaviour
     public int maxSubAxiomLength = 10;
     public string subAxiomCharacters = "FI+-[]x";
 
-
     [Header("Prefabs")]
     public GameObject roadStraightPrefab;
     public GameObject roadIntersectionPrefab;
@@ -28,15 +31,40 @@ public class RoadGenerator : MonoBehaviour
 
     void Start()
     {
+        //----------------------------------------
+        // Génération de la seed locale
+        //----------------------------------------
+        int global = GlobalSeedManager.Instance.globalSeed;
+        seed = CalculateUniqueSeed(global);
+
+        prng = new System.Random(seed);
+
+        //----------------------------------------
+        // Expansion de l'axiome
+        //----------------------------------------
         string baseTemplate = axiom;
         axiom = ExpandPlaceholders(baseTemplate);
 
-        Debug.Log("Generated Axiom: " + axiom);
+        Debug.Log($"[{gameObject.name}] Seed locale = {seed}, Axiom = {axiom}");
 
         GenerateLSystem();
         GenerateRoad();
     }
 
+    // Génère une seed unique à partir de globalSeed + InstanceID
+    int CalculateUniqueSeed(int globalSeed)
+    {
+        unchecked
+        {
+            int id = gameObject.GetInstanceID();
+
+            int hash = 17;
+            hash = hash * 31 + globalSeed;
+            hash = hash * 31 + id;
+
+            return hash;
+        }
+    }
 
     // ----------------------------------------------
     //   L-SYSTEM
@@ -71,6 +99,7 @@ public class RoadGenerator : MonoBehaviour
         }
     }
 
+    // Expansion des '?', mais en utilisant la seed locale
     string ExpandPlaceholders(string template)
     {
         string result = "";
@@ -79,10 +108,11 @@ public class RoadGenerator : MonoBehaviour
         {
             if (c == '?')
             {
-                int length = Random.Range(minSubAxiomLength, maxSubAxiomLength + 1);
+                int length = prng.Next(minSubAxiomLength, maxSubAxiomLength + 1);
+
                 for (int i = 0; i < length; i++)
                 {
-                    int index = Random.Range(0, subAxiomCharacters.Length);
+                    int index = prng.Next(0, subAxiomCharacters.Length);
                     result += subAxiomCharacters[index];
                 }
             }
@@ -95,16 +125,13 @@ public class RoadGenerator : MonoBehaviour
         return result;
     }
 
-
     // ----------------------------------------------
     //   GÉNÉRATION DES ROUTES
     // ----------------------------------------------
     void GenerateRoad()
     {
         Vector3 currentPos = transform.position + startOffset;
-
         Vector3 direction = Vector3.forward;
-        Vector3 lastDirection = direction;
 
         Stack<(Vector3 pos, Vector3 dir)> stateStack = new Stack<(Vector3, Vector3)>();
 
@@ -113,38 +140,24 @@ public class RoadGenerator : MonoBehaviour
             switch (c)
             {
                 case 'F':
-                    {
-                        Vector3 forward = direction.normalized;
-
-                        Instantiate(
-                            roadStraightPrefab,
-                            currentPos,
-                            Quaternion.LookRotation(forward),
-                            transform
-                        );
-
-                        currentPos += forward * stepLength;
-
-                        lastDirection = direction;
-                    }
+                    Instantiate(
+                        roadStraightPrefab,
+                        currentPos,
+                        Quaternion.LookRotation(direction),
+                        transform
+                    );
+                    currentPos += direction * stepLength;
                     break;
 
                 case 'I':
-                    {
-                        Vector3 forward = direction.normalized;
-
-                        Instantiate(
-                            roadIntersectionPrefab,
-                            currentPos,
-                            Quaternion.LookRotation(forward),
-                            transform
-                        );
-
-                        currentPos += forward * stepLength;
-                        lastDirection = direction;
-                    }
+                    Instantiate(
+                        roadIntersectionPrefab,
+                        currentPos,
+                        Quaternion.LookRotation(direction),
+                        transform
+                    );
+                    currentPos += direction * stepLength;
                     break;
-
 
                 case '+':
                     direction = Quaternion.Euler(0, turnAngle, 0) * direction;
@@ -155,7 +168,7 @@ public class RoadGenerator : MonoBehaviour
                     break;
 
                 case 'x':
-                    direction = Quaternion.Euler(0, turnAngle*2, 0) * direction;
+                    direction = Quaternion.Euler(0, turnAngle * 2, 0) * direction;
                     break;
 
                 case '[':
@@ -170,7 +183,7 @@ public class RoadGenerator : MonoBehaviour
     }
 }
 
-    [System.Serializable]
+[System.Serializable]
 public class LRule
 {
     public string symbol;
