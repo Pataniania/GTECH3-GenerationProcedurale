@@ -4,88 +4,68 @@ using System.Collections.Generic;
 public class CityGeneratorConnectedRandom : MonoBehaviour
 {
     [Header("City Settings")]
-    public int minTiles = 20;            // Nombre minimal de tiles
-    public int maxTiles = 50;            // Nombre maximal de tiles
+    public GameObject cityTilePrefab;     // Prefab contenant Road + Building
+    public int minCityTiles = 10;
+    public int maxCityTiles = 30;
     public float tileSize = 0.96f;
-    public GameObject cityTilePrefab;
+    public float maxSlope = 0.3f;        // pente maximale pour placer la ville
+    public float seaLevel = 0.25f;
 
-    private int seed;
-    private System.Random prng;
-
-    private List<TileNode> placedTiles = new List<TileNode>();
-    private List<TileNode> openEdges = new List<TileNode>();
+    private TerrainGenerartion terrainScript;
 
     void Start()
     {
-        seed = GlobalSeedManager.Instance.globalSeed;
-        prng = new System.Random(seed);
+        terrainScript = GetComponent<TerrainGenerartion>();
 
-        GenerateCity();
-    }
-
-    void GenerateCity()
-    {
-        // 1. Nombre de tiles aléatoire dans la range
-        int numberOfTiles = prng.Next(minTiles, maxTiles + 1);
-        Debug.Log($"[CityGenerator] Génération de {numberOfTiles} tiles avec seed globale {seed}");
-
-        // 2. Placer la première tile au centre
-        Vector3 startPos = Vector3.zero;
-        GameObject firstTile = Instantiate(cityTilePrefab, startPos, Quaternion.identity, transform);
-        firstTile.name = "Tile_0";
-
-        TileNode firstNode = new TileNode(firstTile, Vector3.zero);
-        placedTiles.Add(firstNode);
-        openEdges.Add(firstNode);
-
-        // 3. Placer les autres tiles
-        for (int i = 1; i < numberOfTiles; i++)
+        if (terrainScript == null)
         {
-            // Choisir une tile avec bord ouvert
-            int index = prng.Next(openEdges.Count);
-            TileNode parent = openEdges[index];
-
-            // Choisir un bord libre (N=+Z, E=+X, S=-Z, W=-X)
-            Vector3[] directions = { Vector3.forward, Vector3.right, Vector3.back, Vector3.left };
-            Vector3 dir = directions[prng.Next(directions.Length)];
-
-            Vector3 newPos = parent.position + dir * tileSize;
-
-            // Vérifier qu'il n'y a pas déjà une tile ici
-            bool positionFree = true;
-            foreach (var t in placedTiles)
-                if (Vector3.Distance(t.position, newPos) < 0.1f)
-                {
-                    positionFree = false;
-                    break;
-                }
-
-            if (!positionFree)
-            {
-                i--; // refaire ce tile
-                continue;
-            }
-
-            // Instancier la tile
-            GameObject tile = Instantiate(cityTilePrefab, newPos, Quaternion.identity, transform);
-            tile.name = $"Tile_{i}";
-
-            TileNode node = new TileNode(tile, newPos);
-            placedTiles.Add(node);
-            openEdges.Add(node);
+            Debug.LogError("TerrainGenerartion script not found on this GameObject!");
+            return;
         }
+
+        SpawnCityOnTerrain();
     }
 
-    // Classe simple pour stocker les tiles placées
-    private class TileNode
+    void SpawnCityOnTerrain()
     {
-        public GameObject tile;
-        public Vector3 position;
+        // Seed globale
+        int seed = GlobalSeedManager.Instance.globalSeed;
+        System.Random prng = new System.Random(seed);
 
-        public TileNode(GameObject t, Vector3 pos)
+        // Nombre de tiles aléatoire
+        int numberOfTiles = prng.Next(minCityTiles, maxCityTiles + 1);
+
+        Vector3[] vertices = terrainScript.GetComponent<MeshFilter>().mesh.vertices;
+
+        List<Vector3> validPositions = new List<Vector3>();
+
+        // Trouver les positions valides (au-dessus du seaLevel et pente faible)
+        for (int i = 0; i < vertices.Length; i++)
         {
-            tile = t;
-            position = pos;
+            Vector3 worldPos = transform.TransformPoint(vertices[i]);
+            if (worldPos.y > seaLevel)
+            {
+                validPositions.Add(worldPos);
+            }
+        }
+
+        if (validPositions.Count == 0)
+        {
+            Debug.LogWarning("No valid positions for city tiles on terrain.");
+            return;
+        }
+
+        // Placer les tiles
+        for (int i = 0; i < numberOfTiles; i++)
+        {
+            int index = prng.Next(validPositions.Count);
+            Vector3 position = validPositions[index];
+
+            // On retire cette position pour éviter de superposer
+            validPositions.RemoveAt(index);
+
+            GameObject tile = Instantiate(cityTilePrefab, position, Quaternion.identity, transform);
+            tile.name = $"CityTile_{i}";
         }
     }
 }
